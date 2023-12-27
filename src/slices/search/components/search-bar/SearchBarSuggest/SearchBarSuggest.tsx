@@ -15,7 +15,6 @@ import { useSettingsContext } from 'src/shell/top-bar/settings/context';
 import type { ApiCategory, Category, ItemsCategoriesMap } from 'src/slices/search/utils/search-categories';
 import { getItemCategory, getSearchCategories } from 'src/slices/search/utils/search-categories';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import ExternalSearchItem from 'src/features/chain-variants/zeta-chain/components/ExternalSearchItem';
 import SearchBarSuggestZetaChainCCTX from 'src/features/chain-variants/zeta-chain/components/SearchBarSuggestZetaChainCCTX';
 import type { ExternalSearchItem as ExternalSearchItemType } from 'src/features/chain-variants/zeta-chain/utils/external-search';
@@ -257,7 +256,6 @@ const SearchBarSuggest = ({ query, zetaChainCCTXQuery, externalSearchItem, searc
     <>
       { !isMobile && (
         <Box pb={ 4 } mb={ 5 } borderColor="border.divider" borderBottomWidth="1px" _empty={{ display: 'none' }}>
-          <TextAd textStyle={{ lg: 'sm' }}/>
         </Box>
       ) }
       { content }

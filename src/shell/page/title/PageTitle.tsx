@@ -5,8 +5,6 @@ import { Flex, chakra } from '@chakra-ui/react';
 import { debounce } from 'es-toolkit';
 import React from 'react';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import useIsMobile from 'src/shared/hooks/useIsMobile';
 
 import { Heading } from 'src/toolkit/chakra/heading';
@@ -23,12 +21,11 @@ interface Props {
   secondRow?: React.ReactNode;
   secondRowProps?: JsxStyleProps;
   isLoading?: boolean;
-  withTextAd?: boolean;
 };
 
 const TEXT_MAX_LINES = 1;
 
-const PageTitle = ({ title, contentAfter, withTextAd, className, isLoading = false, afterTitle, beforeTitle, secondRow, secondRowProps }: Props) => {
+const PageTitle = ({ title, contentAfter, className, isLoading = false, afterTitle, beforeTitle, secondRow, secondRowProps }: Props) => {
   const tooltip = useDisclosure();
   const isMobile = useIsMobile();
   const [ isTextTruncated, setIsTextTruncated ] = React.useState(false);
@@ -121,7 +118,6 @@ const PageTitle = ({ title, contentAfter, withTextAd, className, isLoading = fal
           { afterTitle }
         </Flex>
         { contentAfter }
-        { withTextAd && <TextAd order={{ base: -1, lg: 100 }} mb={{ base: 6, lg: 0 }} ml="auto" w={{ base: '100%', lg: 'auto' }}/> }
       </Flex>
       { secondRow && (
         <Skeleton loading={ isLoading } alignItems="center" minH={ 10 } overflow="hidden" display="flex" _empty={{ display: 'none' }} { ...secondRowProps }>

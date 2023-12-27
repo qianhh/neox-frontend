@@ -44,7 +44,6 @@ test('with featured app +@dark-mode', async({ render, mockEnvs, page }) => {
   const component = await render(<Marketplace/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -58,7 +57,6 @@ test('with banner +@dark-mode', async({ render, mockEnvs, mockConfigResponse, pa
   const component = await render(<Marketplace/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -72,7 +70,6 @@ test('with essential dapps +@dark-mode', async({ render, mockEnvs, mockConfigRes
   await mockConfigResponse('MARKETPLACE_BANNER_CONTENT_URL', MARKETPLACE_BANNER_CONTENT_URL, './playwright/mocks/page.html', true);
   const component = await render(<Marketplace/>);
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

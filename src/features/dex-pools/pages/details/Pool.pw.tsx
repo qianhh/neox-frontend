@@ -18,15 +18,13 @@ const hooksConfig = {
   },
 };
 
-test('base view +@mobile +@dark-mode', async({ render, mockApiResponse, mockTextAd, mockAssetResponse, page }) => {
-  await mockTextAd();
+test('base view +@mobile +@dark-mode', async({ render, mockApiResponse, mockAssetResponse, page }) => {
   await mockApiResponse('contractInfo:pool', poolMock.base, { pathParams: { instanceId: config.apis.contractInfo?.instanceId, hash: addressHash } });
   await mockApiResponse('core:address', addressMock.contract, { pathParams: { hash: poolMock.base.pool_id } });
   await mockAssetResponse(poolMock.base.quote_token_icon_url as string, './playwright/mocks/image_s.jpg');
   await mockAssetResponse(poolMock.base.base_token_icon_url as string, './playwright/mocks/image_md.jpg');
   const component = await render(<Pool/>, { hooksConfig });
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
     maxDiffPixels: 20,
   });

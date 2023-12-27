@@ -17,13 +17,12 @@ const id = '42';
 
 test.describe.configure({ mode: 'serial' });
 
-test.beforeEach(async({ mockApiResponse, mockAssetResponse, mockTextAd }) => {
+test.beforeEach(async({ mockApiResponse, mockAssetResponse }) => {
   await mockApiResponse('core:token', tokenMock.tokenInfo, { pathParams: { hash } });
   await mockApiResponse('core:address', addressMock.token, { pathParams: { hash } });
   await mockApiResponse('core:token_instance', tokenInstanceMock.unique, { pathParams: { hash, id } });
   await mockApiResponse('core:token_instance_transfers', { items: [], next_page_params: null }, { pathParams: { hash, id } });
   await mockApiResponse('core:token_instance_transfers_count', { transfers_count: 420 }, { pathParams: { hash, id } });
-  await mockTextAd();
   for (const marketplace of config.slices.token.nft.marketplaces) {
     await mockAssetResponse(marketplace.logo_url, './playwright/mocks/image_svg.svg');
   }
@@ -57,7 +56,6 @@ test('metadata update', async({ render, page, createSocket, mockApiResponse, moc
 
   // take a screenshot of initial state
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 
@@ -75,7 +73,6 @@ test('metadata update', async({ render, page, createSocket, mockApiResponse, moc
 
   // take a screenshot of loading state
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 
@@ -94,7 +91,6 @@ test('metadata update', async({ render, page, createSocket, mockApiResponse, moc
 
   // take a screenshot of updated state
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -120,7 +116,6 @@ test('metadata update failed', async({ render, page }) => {
 
   // take a screenshot of error state
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

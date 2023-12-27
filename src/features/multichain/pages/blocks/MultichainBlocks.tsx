@@ -117,7 +117,6 @@ const MultichainBlocks = () => {
   return (
     <>
       <PageTitle
-        withTextAd
         title="Blocks"
       />
       <RoutedTabs

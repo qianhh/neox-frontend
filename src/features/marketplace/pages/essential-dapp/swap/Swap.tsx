@@ -3,7 +3,6 @@
 import { Flex, useToken } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import essentialDappsChainsConfig from 'src/features/marketplace/chains-config/essential-dapps';
 
 import config from 'src/config';
@@ -59,15 +58,7 @@ export default function Swap() {
         message={ message }
         isEssentialDapp
       />
-      { (feature?.essentialDappsAdEnabled && !isMobile) && (
-        <AdBanner
-          format="mobile"
-          w="fit-content"
-          borderRadius="md"
-          overflow="hidden"
-          ml="auto"
-        />
-      ) }
+      { (feature?.essentialDappsAdEnabled && !isMobile) }
     </Flex>
   );
 };

@@ -6,8 +6,7 @@ import DefaultView from './specs/DefaultView';
 import LongNameAndManyTags from './specs/LongNameAndManyTags';
 import WithTextAd from './specs/WithTextAd';
 
-test.beforeEach(async({ mockTextAd, mockAssetResponse }) => {
-  await mockTextAd();
+test.beforeEach(async({ mockAssetResponse }) => {
   await mockAssetResponse('https://example.com/logo.png', './playwright/mocks/image_s.jpg');
 });
 

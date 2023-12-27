@@ -15,7 +15,6 @@ import AddressQrCode from 'src/slices/address/pages/details/info/AddressQrCode';
 import getCheckedSummedAddress from 'src/slices/address/utils/get-checked-summed-address';
 import { CONTRACT_TAB_IDS } from 'src/slices/contract/utils/tabs';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import ClusterChainsPopover from 'src/features/multichain/components/ClusterChainsPopover';
 import { ADDRESS } from 'src/features/multichain/stubs';
 import * as contract from 'src/features/multichain/utils/contract';
@@ -155,7 +154,6 @@ const MultichainAddress = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ `${ isContract ? 'Contract' : 'Address' } details` }
         isLoading={ isLoading }

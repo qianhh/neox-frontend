@@ -154,7 +154,7 @@ const MultichainTokens = () => {
 
   return (
     <>
-      <PageTitle title="Tokens" withTextAd/>
+      <PageTitle title="Tokens" />
       <Tokens
         query={ tokensQuery }
         actionBar={ actionBar }

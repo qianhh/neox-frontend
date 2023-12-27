@@ -14,8 +14,7 @@ const hooksConfig = {
   },
 };
 
-test('base view +@mobile', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
-  await mockTextAd();
+test('base view +@mobile', async({ render, mockApiResponse, mockEnvs }) => {
   await mockEnvs(ENVS_MAP.arbitrumRollup);
   await mockApiResponse(
     'core:arbitrum_l2_txn_withdrawals',

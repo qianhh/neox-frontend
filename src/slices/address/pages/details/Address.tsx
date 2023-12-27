@@ -43,7 +43,6 @@ import sortMetadataTags from 'src/features/address-metadata/components/tag/sort'
 import useAddressMetadataInfoQuery from 'src/features/address-metadata/hooks/useAddressMetadataInfoQuery';
 import useAddressMetadataInitUpdate from 'src/features/address-metadata/hooks/useAddressMetadataInitUpdate';
 import useAddressProfileApiQuery from 'src/features/address-profile-api/hooks/useAddressProfileApiQuery';
-import TextAd from 'src/features/ads/text/components/TextAd';
 import AlternativeExplorers from 'src/features/alternative-explorers/components/AlternativeExplorers';
 import AddressDeposits from 'src/features/chain-variants/beacon-chain/pages/address/AddressDeposits';
 import AddressWithdrawals from 'src/features/chain-variants/beacon-chain/pages/address/AddressWithdrawals';
@@ -471,7 +470,6 @@ const AddressPageContent = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ `${ addressQuery.data?.is_contract && addressQuery.data?.proxy_type !== 'eip7702' ? 'Contract' : 'Address' } details` }
         contentAfter={ titleContentAfter }

@@ -7,7 +7,6 @@ import type * as contractsInfo from '@blockscout/contracts-info-types';
 import TokenEntity from 'src/slices/token/components/entity/TokenEntity';
 
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 
 import { Skeleton } from 'src/toolkit/chakra/skeleton';
 
@@ -143,7 +142,6 @@ const PoolInfo = ({ data, isPlaceholderData }: Props) => {
         </Skeleton>
       </DetailedInfo.ItemValue>
 
-      <DetailedInfoSponsoredItem isLoading={ isPlaceholderData }/>
     </DetailedInfo.Container>
   );
 };

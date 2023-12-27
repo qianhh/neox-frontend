@@ -111,7 +111,6 @@ const MultichainTokenTransfers = () => {
   return (
     <>
       <PageTitle
-        withTextAd
         title="Token transfers"
       />
       <RoutedTabs

@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import PageTitle from 'src/shell/page/title/PageTitle';
 
 import useRedirectForInvalidAuthToken from 'src/features/account/hooks/useRedirectForInvalidAuthToken';
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import { useRewardsContext } from 'src/features/rewards/context';
 import useStreakBadges from 'src/features/rewards/hooks/useStreakBadges';
 
@@ -67,7 +66,7 @@ const RewardsDashboard = () => {
           ) }
           mb={ 0 }
         />
-        { !isMobile && <AdBanner format="mobile" w="fit-content" flexShrink={ 0 } borderRadius="md" overflow="hidden"/> }
+        { !isMobile }
       </Flex>
       <Flex flexDirection="column" alignItems="flex-start" w="full" gap={ 6 }>
         { isError && <Alert status="error">Failed to load some data. Please try again later.</Alert> }

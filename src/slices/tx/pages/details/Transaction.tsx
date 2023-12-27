@@ -14,7 +14,6 @@ import TxTokenTransfer from 'src/slices/token-transfer/pages/tx/TxTokenTransfer'
 import useTxQuery from 'src/slices/tx/hooks/useTxQuery';
 
 import MetadataTags from 'src/features/address-metadata/components/tag/MetadataTags';
-import TextAd from 'src/features/ads/text/components/TextAd';
 import TxDetailsWrapped from 'src/features/chain-variants/suave/pages/tx/TxDetailsWrapped';
 import { publicClient } from 'src/features/connect-wallet/utils/public-client';
 import TxBlobs from 'src/features/data-availability/pages/tx/TxBlobs';
@@ -132,7 +131,6 @@ const TransactionPageContent = () => {
 
   return (
     <AddressHighlightProvider>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title="Transaction details"
         contentAfter={ tags }

@@ -46,7 +46,6 @@ import config from 'src/config';
 import RawInputData from 'src/shared/data/RawInputData';
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
 import DetailedInfoNativeCoinValue from 'src/shared/detailed-info/DetailedInfoNativeCoinValue';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import DetailedInfoTimestamp from 'src/shared/detailed-info/DetailedInfoTimestamp';
 import VerificationSteps from 'src/shared/lifecycle/steps/VerificationSteps';
 import StatusTag from 'src/shared/tags/status-tag/StatusTag';
@@ -365,8 +364,6 @@ const TxDetails = ({ data, isLoading, socketStatus, noTxActions }: Props) => {
       { data.allowed_peekers && data.allowed_peekers.length > 0 && (
         <TxAllowedPeekers items={ data.allowed_peekers }/>
       ) }
-
-      <DetailedInfoSponsoredItem isLoading={ isLoading }/>
 
       <DetailedInfo.ItemDivider/>
 

@@ -8,7 +8,6 @@ import type { Blob } from 'src/features/data-availability/types/api';
 import TxEntity from 'src/slices/tx/components/entity/TxEntity';
 
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import CopyToClipboard from 'src/shared/texts/CopyToClipboard';
 
 import { Alert } from 'src/toolkit/chakra/alert';
@@ -97,8 +96,6 @@ const BlobInfo = ({ data, isLoading }: Props) => {
           </DetailedInfo.ItemValue>
         </>
       ) }
-
-      <DetailedInfoSponsoredItem isLoading={ isLoading }/>
 
       { data.blob_data && (
         <BlobData data={ data.blob_data } hash={ data.hash } isLoading={ isLoading }/>

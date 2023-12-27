@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: LicenseRef-Blockscout
 
 export { addressProfileApi } from './address-profile-api';
-export { ads } from './ads';
 export { app } from './app';
 export { connectWallet } from './connect-wallet';
 export { cloudFlare } from './cloud-flare';

@@ -22,7 +22,7 @@ const Transactions = () => {
 
   return (
     <>
-      <PageTitle title="Transactions" withTextAd/>
+      <PageTitle title="Transactions" />
       <TxsStats/>
       <TxsTabs
         listProps={ isMobile ? undefined : TAB_LIST_PROPS }

@@ -41,7 +41,6 @@ const testFn = (isMobile: boolean) => async({ render, mockConfigResponse, mockAs
   }
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 };

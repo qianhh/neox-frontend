@@ -10,7 +10,6 @@ import PageTitle from 'src/shell/page/title/PageTitle';
 
 import BlockEntity from 'src/slices/block/components/entity/BlockEntity';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import { CELO_EPOCH } from 'src/features/chain-variants/celo/stubs/epoch';
 
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
@@ -87,7 +86,6 @@ const EpochPageContent = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ `Epoch #${ number }` }
         contentAfter={ titleContentAfter }

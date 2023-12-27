@@ -10,7 +10,6 @@ import BlockEntity from 'src/slices/block/components/entity/BlockEntity';
 import NativeTokenIcon from 'src/slices/token/components/icon/TokenIconNative';
 
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import CopyToClipboard from 'src/shared/texts/CopyToClipboard';
 import HashStringShortenDynamic from 'src/shared/texts/HashStringShortenDynamic';
 import NativeCoinValue from 'src/shared/values/entity/NativeCoinValue';
@@ -132,7 +131,6 @@ const ValidatorDetails = ({ data, isLoading }: Props) => {
         <BlockEntity number={ data.stake_updated_at_block_number } isLoading={ isLoading }/>
       </DetailedInfo.ItemValue>
 
-      <DetailedInfoSponsoredItem isLoading={ isLoading }/>
     </DetailedInfo.Container>
   );
 };

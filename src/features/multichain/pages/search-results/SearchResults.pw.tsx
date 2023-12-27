@@ -19,11 +19,10 @@ const hooksConfig = {
   },
 };
 
-test.beforeEach(async({ mockApiResponse, mockMultichainConfig, mockEnvs, mockAssetResponse, mockTextAd }) => {
+test.beforeEach(async({ mockApiResponse, mockMultichainConfig, mockEnvs, mockAssetResponse }) => {
 
   await mockMultichainConfig();
   await mockEnvs(ENVS_MAP.multichain);
-  await mockTextAd();
 
   await mockApiResponse('multichainAggregator:search_addresses', {
     items: [

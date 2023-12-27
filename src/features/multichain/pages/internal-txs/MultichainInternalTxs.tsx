@@ -73,7 +73,6 @@ const MultichainInternalTxs = () => {
     <>
       <PageTitle
         title="Internal transactions"
-        withTextAd
       />
       <DataList
         isError={ isError }

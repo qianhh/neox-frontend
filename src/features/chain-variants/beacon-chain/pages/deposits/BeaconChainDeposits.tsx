@@ -85,7 +85,7 @@ const BeaconChainDeposits = () => {
 
   return (
     <>
-      <PageTitle title="Deposits" withTextAd/>
+      <PageTitle title="Deposits" />
       <DataList
         isError={ isError }
         itemsNum={ data?.items.length }

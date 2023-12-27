@@ -66,7 +66,6 @@ const IcttUsers = () => {
     <>
       <PageTitle
         title="ICTT users"
-        withTextAd
         secondRow="Number of unique users per chain who sent and received cross-chain token transfers"
         secondRowProps={{ minH: 'auto' }}
       />

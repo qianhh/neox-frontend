@@ -12,7 +12,6 @@ import PageTitle from 'src/shell/page/title/PageTitle';
 import TxsWithFrontendSorting from 'src/slices/tx/pages/index/list/TxsWithFrontendSorting';
 import { TX_ITEM } from 'src/slices/tx/stubs/tx';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import { ZKSYNC_L2_TXN_BATCH } from 'src/features/rollup/zk-sync/stubs';
 
 import throwOnAbsentParamError from 'src/shared/errors/throw-on-absent-param-error';
@@ -79,7 +78,6 @@ const ZkSyncL2TxnBatch = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle title={ `Txn batch #${ number }` }/>
       <RoutedTabs
         tabs={ tabs }

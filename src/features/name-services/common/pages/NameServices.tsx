@@ -23,7 +23,7 @@ const NameServices = () => {
 
   return (
     <>
-      <PageTitle title="Name services lookup" withTextAd/>
+      <PageTitle title="Name services lookup" />
       <RoutedTabs tabs={ tabs }/>
     </>
   );

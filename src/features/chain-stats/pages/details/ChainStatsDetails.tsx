@@ -129,7 +129,6 @@ const ChainStatsDetails = () => {
         mb={ 3 }
         isLoading={ isInitialLoading }
         secondRow={ chartInfo?.description }
-        withTextAd
       />
       { content }
     </>

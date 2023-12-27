@@ -12,10 +12,6 @@ import * as crossChainTxsPathsMock from '../../mocks/cross-chain-txs-paths';
 import * as statsLineMock from '../../mocks/line';
 import ChainStatsDetails from './ChainStatsDetails';
 
-test.beforeEach(async({ mockTextAd }) => {
-  await mockTextAd();
-});
-
 test('base view +@dark-mode +@mobile', async({ render, mockApiResponse, page }) => {
 
   const CHART_ID = 'averageGasPrice';

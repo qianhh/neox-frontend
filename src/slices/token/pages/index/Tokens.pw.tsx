@@ -8,8 +8,7 @@ import { test, expect } from 'playwright/lib';
 
 import Tokens from './Tokens';
 
-test.beforeEach(async({ mockTextAd, mockAssetResponse }) => {
-  await mockTextAd();
+test.beforeEach(async({ mockAssetResponse }) => {
   await mockAssetResponse(tokens.tokenInfoERC20a.icon_url as string, './playwright/mocks/image_svg.svg');
 });
 

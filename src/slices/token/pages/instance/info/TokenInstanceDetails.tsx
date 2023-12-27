@@ -14,7 +14,6 @@ import useAppActionData from 'src/features/address-metadata/hooks/useAppActionDa
 
 import config from 'src/config';
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import useIsMounted from 'src/shared/hooks/useIsMounted';
 import CopyToClipboard from 'src/shared/texts/CopyToClipboard';
 import HashStringShortenDynamic from 'src/shared/texts/HashStringShortenDynamic';
@@ -128,7 +127,6 @@ const TokenInstanceDetails = ({ data, token, scrollRef, isLoading }: Props) => {
       >
         <TokenInstanceMetadataInfo data={ data } isLoading={ isLoading }/>
         <DetailedInfo.ItemDivider/>
-        <DetailedInfoSponsoredItem isLoading={ isLoading }/>
       </DetailedInfo.Container>
     </>
   );

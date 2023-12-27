@@ -60,7 +60,6 @@ const MultichainTxs = () => {
   return (
     <>
       <PageTitle
-        withTextAd
         title="Transactions"
       />
       <RoutedTabs

@@ -37,8 +37,7 @@ const getSearchInput = (page: Page, isHeroBanner = false) => {
   return isHeroBanner ? page.getByPlaceholder(/search/i).last() : page.getByPlaceholder(/search/i);
 };
 
-test.beforeEach(async({ mockAssetResponse, mockEnvs, mockTextAd }) => {
-  await mockTextAd();
+test.beforeEach(async({ mockAssetResponse, mockEnvs }) => {
   await mockAssetResponse(searchMock.token1.icon_url as string, './playwright/mocks/image_s.jpg');
   await mockEnvs([
     [ 'NEXT_PUBLIC_MARKETPLACE_ENABLED', 'false' ],

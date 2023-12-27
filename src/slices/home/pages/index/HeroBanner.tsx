@@ -9,7 +9,6 @@ import SearchBar from 'src/slices/search/components/search-bar/SearchBarDesktop'
 import SearchBarMobile from 'src/slices/search/components/search-bar/SearchBarMobile';
 
 import UserProfileDesktop from 'src/features/account/components/user-profile/UserProfileDesktop';
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import RewardsButton from 'src/features/rewards/components/RewardsButton';
 
 import config from 'src/config';
@@ -96,7 +95,7 @@ const HeroBanner = () => {
           <SearchBar isHeroBanner/>
         </Box>
       </Box>
-      { !isMobile && <AdBanner format="mobile" w="fit-content" flexShrink={ 0 } borderRadius="md" overflow="hidden"/> }
+      { !isMobile }
     </Flex>
   );
 };

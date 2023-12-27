@@ -21,10 +21,6 @@ const hooksConfig = {
 // test cases which use socket cannot run in parallel since the socket server always run on the same port
 test.describe.configure({ mode: 'serial' });
 
-test.beforeEach(async({ mockTextAd }) => {
-  await mockTextAd();
-});
-
 test('base view +@dark-mode', async({ render, mockApiResponse }) => {
   await mockApiResponse('core:blocks', baseListResponse, { queryParams: { type: 'block' } });
   await mockApiResponse('core:stats', statsMock.base);

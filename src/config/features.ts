@@ -4,8 +4,6 @@ export { default as advancedFilter } from 'src/features/advanced-filter/config';
 export { default as account } from 'src/features/account/config';
 export { default as addressMetadata } from 'src/features/address-metadata/config';
 export { default as address3rdPartyWidgets } from 'src/features/address-3rd-party-widgets/config';
-export { default as adsBanner } from 'src/features/ads/banner/config';
-export { default as adsText } from 'src/features/ads/text/config';
 export { default as alternativeExplorers } from 'src/features/alternative-explorers/config';
 export { default as apiDocs } from 'src/features/api-docs/config';
 export { default as beaconChain } from 'src/features/chain-variants/beacon-chain/config';

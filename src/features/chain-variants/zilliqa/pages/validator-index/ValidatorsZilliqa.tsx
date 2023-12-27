@@ -49,7 +49,7 @@ const ValidatorsZilliqa = () => {
 
   return (
     <Box>
-      <PageTitle title="Validators" withTextAd/>
+      <PageTitle title="Validators" />
       <DataList
         isError={ isError }
         itemsNum={ data?.items.length }

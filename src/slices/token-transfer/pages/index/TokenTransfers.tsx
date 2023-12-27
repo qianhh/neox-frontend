@@ -33,7 +33,7 @@ const TokenTransfers = () => {
     <>
       <PageTitle
         title="Token transfers"
-        withTextAd
+        
       />
       <RoutedTabs tabs={ tabs }/>
     </>

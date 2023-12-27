@@ -6,13 +6,8 @@ import 'vitest-fetch-mock';
 declare global {
   export interface Window {
     ethereum?: WalletProvider | undefined;
-    sevioads: Array<Array<Record<string, string>>> | undefined;
     ga?: {
       getAll: () => Array<{ get: (prop: string) => string }>;
-    };
-    AdButler: {
-      ads: Array<unknown>;
-      register: (...args: unknown) => void;
     };
     abkw: string;
     __envs: Record<string, string>;

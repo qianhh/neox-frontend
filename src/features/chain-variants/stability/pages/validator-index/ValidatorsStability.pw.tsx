@@ -8,13 +8,12 @@ import Validators from './ValidatorsStability';
 
 const chainType = 'stability';
 
-test('base view +@mobile', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
+test('base view +@mobile', async({ render, mockApiResponse, mockEnvs }) => {
   await mockEnvs([
     [ 'NEXT_PUBLIC_VALIDATORS_CHAIN_TYPE', chainType ],
   ]);
   await mockApiResponse('core:validators_stability', validatorsMock.validatorsResponse);
   await mockApiResponse('core:validators_stability_counters', validatorsMock.validatorsCountersResponse);
-  await mockTextAd();
 
   const component = await render(<Validators/>);
 

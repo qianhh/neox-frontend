@@ -7,7 +7,6 @@ import useApiQuery from 'src/api/hooks/useApiQuery';
 
 import PageTitle from 'src/shell/page/title/PageTitle';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import AlternativeExplorers from 'src/features/alternative-explorers/components/AlternativeExplorers';
 import BlobEntity from 'src/features/data-availability/components/entity/BlobEntity';
 import { BLOB } from 'src/features/data-availability/stubs';
@@ -60,7 +59,6 @@ const BlobPageContent = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title="Blob details"
         secondRow={ titleSecondRow }

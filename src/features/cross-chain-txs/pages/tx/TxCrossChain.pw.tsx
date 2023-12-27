@@ -13,8 +13,7 @@ const hooksConfig = {
   },
 };
 
-test('successful tx +@mobile', async({ render, mockEnvs, mockApiResponse, mockAssetResponse, mockTextAd }) => {
-  await mockTextAd();
+test('successful tx +@mobile', async({ render, mockEnvs, mockApiResponse, mockAssetResponse }) => {
   await mockEnvs([
     ...ENVS_MAP.crossChainTxs,
     [ 'NEXT_PUBLIC_NETWORK_ID', crossChainConfigMock.config[0].id ],

@@ -7,10 +7,9 @@ import { test, expect, devices } from 'playwright/lib';
 
 import ScrollL2TxnBatches from './ScrollL2TxnBatches';
 
-test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+test('base view', async({ render, mockEnvs, mockApiResponse }) => {
   test.slow();
   await mockEnvs(ENVS_MAP.scrollRollup);
-  await mockTextAd();
   await mockApiResponse('core:scroll_l2_txn_batches', scrollTxnBatchesMock.baseResponse);
   await mockApiResponse('core:scroll_l2_txn_batches_count', 9927);
 
@@ -21,10 +20,9 @@ test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
 
-  test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+  test('base view', async({ render, mockEnvs, mockApiResponse }) => {
     test.slow();
     await mockEnvs(ENVS_MAP.scrollRollup);
-    await mockTextAd();
     await mockApiResponse('core:scroll_l2_txn_batches', scrollTxnBatchesMock.baseResponse);
     await mockApiResponse('core:scroll_l2_txn_batches_count', 9927);
 

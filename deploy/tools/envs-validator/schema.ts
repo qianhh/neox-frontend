@@ -173,7 +173,6 @@ const schema = yup
   .concat(uiSchemas.viewsSchema)
   .concat(featuresSchemas.accountSchema)
   .concat(featuresSchemas.address3rdPartyWidgetsConfigSchema)
-  .concat(featuresSchemas.adsSchema)
   .concat(featuresSchemas.apiDocsSchema)
   .concat(featuresSchemas.beaconChainSchema)
   .concat(featuresSchemas.bridgedTokensSchema)

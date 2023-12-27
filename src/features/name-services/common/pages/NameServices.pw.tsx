@@ -17,8 +17,7 @@ test.describe('domains', () => {
     },
   };
 
-  test.beforeEach(async({ mockApiResponse, mockAssetResponse, mockTextAd, mockEnvs }) => {
-    await mockTextAd();
+  test.beforeEach(async({ mockApiResponse, mockAssetResponse, mockEnvs }) => {
     await mockEnvs([
       ...ENVS_MAP.clusters,
       ...ENVS_MAP.nameService,
@@ -86,12 +85,11 @@ test.describe('directories', () => {
     },
   };
 
-  test.beforeEach(async({ mockEnvs, mockTextAd, mockApiResponse, mockAssetResponse }) => {
+  test.beforeEach(async({ mockEnvs, mockApiResponse, mockAssetResponse }) => {
     await mockEnvs([
       ...ENVS_MAP.clusters,
       [ 'NEXT_PUBLIC_CLUSTERS_CDN_URL', CDN_URL ],
     ]);
-    await mockTextAd();
     await mockAssetResponse(`${ CDN_URL }/profile-image/campnetwork/lol`, './playwright/mocks/image_s.jpg');
     await mockAssetResponse(`${ CDN_URL }/profile-image/duck/quack`, './playwright/mocks/image_s.jpg');
     await mockAssetResponse(`${ CDN_URL }/profile-image/test/cluster`, './playwright/mocks/image_s.jpg');

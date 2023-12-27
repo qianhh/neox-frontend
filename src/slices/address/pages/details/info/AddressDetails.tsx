@@ -22,7 +22,6 @@ import config from 'src/config';
 import ApiFetchAlert from 'src/shared/alerts/ApiFetchAlert';
 import ApiDegradationAlert from 'src/shared/api-degradation/ApiDegradationAlert';
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import isCustomAppError from 'src/shared/errors/is-custom-app-error';
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import getQueryParamString from 'src/shared/router/get-query-param-string';
@@ -312,8 +311,6 @@ const AddressDetails = ({ addressQuery, countersQuery, isLoading }: Props) => {
             </DetailedInfo.ItemValue>
           </>
         ) }
-
-        <DetailedInfoSponsoredItem isLoading={ isLoading }/>
 
         { (address3rdPartyWidgets.isEnabled && address3rdPartyWidgets.items.length > 0) && (
           <>

@@ -13,7 +13,6 @@ import PageTitle from 'src/shell/page/title/PageTitle';
 
 import AddressEntity from 'src/slices/address/components/entity/AddressEntity';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import EnsEntity from 'src/features/name-services/domains/components/EnsEntity';
 import NameDomainHistory from 'src/features/name-services/domains/pages/details/history/NameDomainHistory';
 import NameDomainDetails from 'src/features/name-services/domains/pages/details/info/NameDomainDetails';
@@ -101,7 +100,6 @@ const NameDomain = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle title="Name details" secondRow={ titleSecondRow }/>
       <RoutedTabs tabs={ tabs } isLoading={ infoQuery.isPlaceholderData }/>
     </>

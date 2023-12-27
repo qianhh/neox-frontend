@@ -27,22 +27,20 @@ const hooksConfig = {
 // test cases which use socket cannot run in parallel since the socket server always run on the same port
 test.describe.configure({ mode: 'serial' });
 
-test.beforeEach(async({ mockApiResponse, mockTextAd }) => {
+test.beforeEach(async({ mockApiResponse }) => {
   await mockApiResponse('core:token', tokenInfo, { pathParams: { hash } });
   await mockApiResponse('core:address', contract, { pathParams: { hash } });
   await mockApiResponse('core:token_counters', tokenCounters, { pathParams: { hash } });
   await mockApiResponse('core:token_transfers', { items: [], next_page_params: null }, { pathParams: { hash } });
-  await mockTextAd();
 });
 
-test('base view', async({ render, page, createSocket }) => {
+test('base view', async({ render, createSocket }) => {
   const component = await render(<Token/>, { hooksConfig }, { withSocket: true });
 
   const socket = await createSocket();
   await socketServer.joinChannel(socket, `tokens:${ hash }`);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -66,12 +64,11 @@ test('with verified info', async({ render, page, createSocket, mockApiResponse, 
   await page.getByLabel('Show info').click();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('bridged token', async({ render, page, createSocket, mockApiResponse, mockAssetResponse, mockEnvs }) => {
+test('bridged token', async({ render, createSocket, mockApiResponse, mockAssetResponse, mockEnvs }) => {
   const hash = bridgedTokenA.address_hash;
   const hooksConfig = {
     router: {
@@ -97,12 +94,11 @@ test('bridged token', async({ render, page, createSocket, mockApiResponse, mockA
   await component.getByText('369,000,000 HyFi').waitFor({ state: 'visible' });
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('scam token', async({ render, page, createSocket, mockApiResponse, mockEnvs }) => {
+test('scam token', async({ render, createSocket, mockApiResponse, mockEnvs }) => {
   await mockEnvs([
     [ 'NEXT_PUBLIC_VIEWS_TOKEN_SCAM_TOGGLE_ENABLED', 'true' ],
   ]);
@@ -113,7 +109,6 @@ test('scam token', async({ render, page, createSocket, mockApiResponse, mockEnvs
   await socketServer.joinChannel(socket, `tokens:${ hash }`);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -121,7 +116,7 @@ test('scam token', async({ render, page, createSocket, mockApiResponse, mockEnvs
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
 
-  test('base view', async({ render, page, createSocket }) => {
+  test('base view', async({ render, createSocket }) => {
     test.slow();
     const component = await render(<Token/>, { hooksConfig }, { withSocket: true });
     const socket = await createSocket();
@@ -130,12 +125,11 @@ test.describe('mobile', () => {
     await component.getByText('100 ARIA').waitFor({ state: 'visible', timeout: 10_000 });
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
 
-  test('with verified info', async({ render, page, createSocket, mockApiResponse, mockAssetResponse }) => {
+  test('with verified info', async({ render, createSocket, mockApiResponse, mockAssetResponse }) => {
     test.slow();
     await mockApiResponse(
       'contractInfo:token_verified_info',
@@ -151,7 +145,6 @@ test.describe('mobile', () => {
     await component.getByText('100 ARIA').waitFor({ state: 'visible', timeout: 10_000 });
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });

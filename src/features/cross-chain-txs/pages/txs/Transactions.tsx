@@ -52,7 +52,7 @@ const Transactions = () => {
 
   return (
     <>
-      <PageTitle withTextAd title="Transactions"/>
+      <PageTitle title="Transactions"/>
       <RoutedTabs tabs={ tabs }/>
     </>
   );

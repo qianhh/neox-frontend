@@ -21,7 +21,6 @@ test('between addresses +@mobile +@dark-mode', async({ render, page }) => {
   await page.getByText('View details').click();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -30,7 +29,6 @@ test('creating contact', async({ render, page }) => {
   const component = await render(<TxDetails data={ txMock.withContractCreation } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -40,7 +38,6 @@ test('with token transfer +@mobile', async({ render, page, mockAssetResponse }) 
   const component = await render(<TxDetails data={ txMock.withTokenTransfer } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -49,7 +46,6 @@ test('with decoded revert reason', async({ render, page }) => {
   const component = await render(<TxDetails data={ txMock.withDecodedRevertReason } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -58,7 +54,6 @@ test('with decoded raw reason', async({ render, page }) => {
   const component = await render(<TxDetails data={ txMock.withRawRevertReason } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -69,7 +64,6 @@ test('pending', async({ render, page }) => {
   await page.getByText('View details').click();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -80,7 +74,6 @@ test('with blob', async({ render, page }) => {
   await page.getByText('View details').click();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -89,35 +82,32 @@ test('l2', async({ render, page, mockEnvs }) => {
   await mockEnvs(ENVS_MAP.optimisticRollup);
   const component = await render(<TxDetails data={ l2tx } isLoading={ false }/>);
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('without testnet warning', async({ render, page, mockEnvs }) => {
+test('without testnet warning', async({ render, mockEnvs }) => {
   await mockEnvs([
     [ 'NEXT_PUBLIC_IS_TESTNET', 'false' ],
   ]);
   const component = await render(<TxDetails data={ l2tx } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('stability customization', async({ render, page, mockEnvs, mockAssetResponse }) => {
+test('stability customization', async({ render, mockEnvs, mockAssetResponse }) => {
   await mockEnvs(ENVS_MAP.stabilityEnvs);
   await mockAssetResponse(stabilityTx.stability_fee?.token.icon_url as string, './playwright/mocks/image_s.jpg');
   const component = await render(<TxDetails data={ stabilityTx } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('with grouped fees', async({ render, page, mockEnvs }) => {
+test('with grouped fees', async({ render, mockEnvs }) => {
   await mockEnvs([
     [ 'NEXT_PUBLIC_VIEWS_TX_GROUPED_FEES', 'true' ],
     [ 'NEXT_PUBLIC_VIEWS_TX_HIDDEN_FIELDS', '["gas_price","gas_fees","burnt_fees"]' ],
@@ -129,7 +119,6 @@ test('with grouped fees', async({ render, page, mockEnvs }) => {
   await component.getByText('View details').first().click();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -143,14 +132,13 @@ test('arbitrum L1 status', async({ render, mockEnvs }) => {
   await expect(statusElement).toHaveScreenshot();
 });
 
-test('with external txs +@mobile', async({ page, render, mockEnvs, mockApiResponse, mockAssetResponse }) => {
+test('with external txs +@mobile', async({ render, mockEnvs, mockApiResponse, mockAssetResponse }) => {
   await mockEnvs(ENVS_MAP.externalTxs);
   await mockApiResponse('core:tx_external_transactions', [ 'tx1', 'tx2', 'tx3' ], { pathParams: { hash: txMock.base.hash } });
   await mockAssetResponse('http://example.url', './playwright/mocks/image_s.jpg');
   const component = await render(<TxDetails data={ txMock.base } isLoading={ false }/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -163,12 +151,11 @@ test('with interop message in +@mobile', async({ render, page, mockEnvs, mockAss
   await expect(page.getByText('Interop status')).toBeVisible();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('with interop message out +@mobile', async({ page, render, mockEnvs, mockAssetResponse }) => {
+test('with interop message out +@mobile', async({ render, mockEnvs, mockAssetResponse }) => {
   await mockEnvs(ENVS_MAP.interop);
   await mockAssetResponse('https://example.com/logo.png', './playwright/mocks/image_s.jpg');
   const component = await render(<TxDetails data={ withInteropOutMessage } isLoading={ false }/>);
@@ -176,7 +163,6 @@ test('with interop message out +@mobile', async({ page, render, mockEnvs, mockAs
   await expect(component.getByText('Interop status')).toBeVisible();
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
     maxDiffPixels: 20,
   });

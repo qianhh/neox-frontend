@@ -20,10 +20,6 @@ const hooksConfig = {
   },
 };
 
-test.beforeEach(async({ mockTextAd }) => {
-  await mockTextAd();
-});
-
 test.describe('fetched bytecode', () => {
   test('should refetch address query', async({ render, mockApiResponse, createSocket, page }) => {
     const addressApiUrl = await mockApiResponse('core:address', addressMock.validator, { pathParams: { hash: addressParamMock.hash } });
@@ -57,7 +53,6 @@ test('degradation view', async({ render, page, mockRpcResponse, mockApiResponse 
   await page.waitForResponse(config.chain.rpcUrls[0]);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

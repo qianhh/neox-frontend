@@ -77,7 +77,6 @@ const InteropMessages = () => {
     <>
       <PageTitle
         title="Interop messages"
-        withTextAd
       />
       <DataList
         isError={ interopMessagesQuery.isError }

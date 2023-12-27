@@ -82,7 +82,6 @@ const MultichainEcosystems = () => {
     <>
       <PageTitle
         title="Ecosystems"
-        withTextAd
       />
       <DataList
         isError={ isError }

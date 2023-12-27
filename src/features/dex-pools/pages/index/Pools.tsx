@@ -94,7 +94,6 @@ const Pools = () => {
     <>
       <PageTitle
         title="DEX tracker"
-        withTextAd
       />
       <DataList
         isError={ poolsQuery.isError }

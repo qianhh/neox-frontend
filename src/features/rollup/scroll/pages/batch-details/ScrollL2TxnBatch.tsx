@@ -14,7 +14,6 @@ import { BLOCK_ITEM } from 'src/slices/block/stubs/list';
 import TxsWithFrontendSorting from 'src/slices/tx/pages/index/list/TxsWithFrontendSorting';
 import { TX_ITEM } from 'src/slices/tx/stubs/tx';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import { SCROLL_L2_TXN_BATCH } from 'src/features/rollup/scroll/stubs';
 
 import throwOnAbsentParamError from 'src/shared/errors/throw-on-absent-param-error';
@@ -107,7 +106,6 @@ const ScrollL2TxnBatch = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ `Txn batch #${ number }` }
       />

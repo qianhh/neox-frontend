@@ -6,9 +6,8 @@ import { test, expect } from 'playwright/lib';
 import * as depositsMock from '../../mocks/withdrawals';
 import ArbitrumL2Withdrawals from './ArbitrumL2Withdrawals';
 
-test('base view +@mobile', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
+test('base view +@mobile', async({ render, mockApiResponse, mockEnvs }) => {
   test.slow();
-  await mockTextAd();
   await mockEnvs(ENVS_MAP.arbitrumRollup);
   await mockApiResponse('core:arbitrum_l2_messages', depositsMock.baseResponse, { pathParams: { direction: 'from-rollup' } });
   await mockApiResponse('core:arbitrum_l2_messages_count', 3971111, { pathParams: { direction: 'from-rollup' } });

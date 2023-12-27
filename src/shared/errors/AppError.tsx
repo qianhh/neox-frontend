@@ -4,8 +4,6 @@ import { Box, Text } from '@chakra-ui/react';
 import { route } from 'nextjs-routes';
 import React from 'react';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
-
 import getErrorCause from 'src/shared/errors/get-error-cause';
 import getErrorCauseStatusCode from 'src/shared/errors/get-error-cause-status-code';
 import getErrorObjStatusCode from 'src/shared/errors/get-error-obj-status-code';
@@ -107,7 +105,7 @@ const AppError = ({ error, className }: Props) => {
                 Back to home
               </Button>
             </Link>
-            { statusCode === 404 && <AdBanner mt={ 12 }/> }
+            { statusCode === 404 }
           </>
         );
       }

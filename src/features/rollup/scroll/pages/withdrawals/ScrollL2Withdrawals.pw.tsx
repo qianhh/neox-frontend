@@ -7,8 +7,7 @@ import { test, expect, devices } from 'playwright/lib';
 
 import ScrollL2Withdrawals from './ScrollL2Withdrawals';
 
-test('base view', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
-  await mockTextAd();
+test('base view', async({ render, mockApiResponse, mockEnvs }) => {
   await mockEnvs(ENVS_MAP.scrollRollup);
   await mockApiResponse('core:scroll_l2_withdrawals', messagesMock.baseResponse);
   await mockApiResponse('core:scroll_l2_withdrawals_count', 3971111);
@@ -21,8 +20,7 @@ test('base view', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
 
-  test('base view', async({ render, mockApiResponse, mockEnvs, mockTextAd }) => {
-    await mockTextAd();
+  test('base view', async({ render, mockApiResponse, mockEnvs }) => {
     await mockEnvs(ENVS_MAP.scrollRollup);
     await mockApiResponse('core:scroll_l2_withdrawals', messagesMock.baseResponse);
     await mockApiResponse('core:scroll_l2_withdrawals_count', 3971111);

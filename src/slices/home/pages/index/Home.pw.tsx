@@ -37,9 +37,8 @@ test.describe('default view', () => {
   });
 
   // FIXME: test is flaky, screenshot in docker container is different from local
-  test.skip('-@default +@dark-mode', async({ page }) => {
+  test.skip('-@default +@dark-mode', async({ }) => {
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
@@ -47,9 +46,8 @@ test.describe('default view', () => {
   test.describe('screen xl', () => {
     test.use({ viewport: pwConfig.viewport.xl });
 
-    test('base view', async({ page }) => {
+    test('base view', async({ }) => {
       await expect(component).toHaveScreenshot({
-        mask: [ page.locator(pwConfig.adsBannerSelector) ],
         maskColor: pwConfig.maskColor,
       });
     });
@@ -60,7 +58,7 @@ test.describe('default view', () => {
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
 
-  test('base view', async({ render, page, mockAssetResponse, mockApiResponse }) => {
+  test('base view', async({ render, mockAssetResponse, mockApiResponse }) => {
     await mockAssetResponse(statsMock.base.coin_image as string, './playwright/mocks/image_s.jpg');
     await mockApiResponse('stats:pages_main', statsMainMock.base);
     await mockApiResponse('core:stats', statsMock.base);
@@ -75,7 +73,6 @@ test.describe('mobile', () => {
     const component = await render(<Home/>);
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
@@ -131,7 +128,6 @@ test('degradation view', async({ render, mockApiResponse, mockRpcResponse, page 
   }
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -165,7 +161,6 @@ test('error view', async({ render, mockApiResponse, mockRpcResponse, page }) => 
   }
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

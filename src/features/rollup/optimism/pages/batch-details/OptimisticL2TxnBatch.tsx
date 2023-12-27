@@ -12,8 +12,6 @@ import { BLOCK_ITEM } from 'src/slices/block/stubs/list';
 import TxsWithFrontendSorting from 'src/slices/tx/pages/index/list/TxsWithFrontendSorting';
 import { TX_ITEM } from 'src/slices/tx/stubs/tx';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import throwOnAbsentParamError from 'src/shared/errors/throw-on-absent-param-error';
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import useIsMobile from 'src/shared/hooks/useIsMobile';
@@ -99,7 +97,6 @@ const OptimisticL2TxnBatch = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ `Batch #${ batchQuery.data?.number }` }
         isLoading={ batchQuery.isPlaceholderData }

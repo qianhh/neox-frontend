@@ -5,8 +5,6 @@ import React from 'react';
 
 import { clearRecentSearchKeywords, getRecentSearchKeywords, removeRecentSearchKeyword } from 'src/slices/search/utils/recent-search-keywords';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import useIsMobile from 'src/shared/hooks/useIsMobile';
 import HashStringShortenDynamic from 'src/shared/texts/HashStringShortenDynamic';
 
@@ -51,7 +49,6 @@ const SearchBarRecentKeywords = ({ onClick, onClear }: Props) => {
     <>
       { !isMobile && (
         <Box pb={ 4 } mb={ 5 } borderColor="border.divider" borderBottomWidth="1px" _empty={{ display: 'none' }}>
-          <TextAd textStyle={{ lg: 'sm' }}/>
         </Box>
       ) }
       <Flex mb={ 3 } justifyContent="space-between" fontSize="sm">

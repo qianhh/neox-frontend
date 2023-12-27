@@ -4,7 +4,6 @@ import { Text, Flex, HStack, VStack, Separator, Box, chakra } from '@chakra-ui/r
 import { BigNumber } from 'bignumber.js';
 import React from 'react';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import AddressMultichainButton from 'src/features/multichain-button/pages/address/AddressMultichainButton';
 
 import config from 'src/config';
@@ -151,7 +150,7 @@ const MultichainAddressPortfolioNetWorth = ({ addressHash, netWorth, isLoading, 
           { topTokensContent }
         </Flex>
       </VStack>
-      { !isMobile && <AdBanner format="mobile" w="fit-content"/> }
+      { !isMobile }
     </HStack>
   );
 };

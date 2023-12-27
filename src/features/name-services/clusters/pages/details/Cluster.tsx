@@ -7,7 +7,6 @@ import useApiQuery from 'src/api/hooks/useApiQuery';
 
 import PageTitle from 'src/shell/page/title/PageTitle';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import ClusterDetails from 'src/features/name-services/clusters/pages/details/ClusterDetails';
 
 import getQueryParamString from 'src/shared/router/get-query-param-string';
@@ -29,7 +28,6 @@ const Cluster = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle title="Cluster details"/>
       <ClusterDetails
         clusterData={ clusterData }

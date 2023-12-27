@@ -91,7 +91,7 @@ const GasTracker = () => {
 
   return (
     <>
-      <PageTitle title="Gas tracker" secondRow={ titleSecondRow } withTextAd/>
+      <PageTitle title="Gas tracker" secondRow={ titleSecondRow } />
       <Heading level="2" mt={ 8 } mb={ 4 }>{ `Track ${ config.chain.name } gas fees` }</Heading>
       { snippets }
       { config.features.stats.isEnabled && (

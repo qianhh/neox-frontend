@@ -8,7 +8,6 @@ import useApiQuery from 'src/api/hooks/useApiQuery';
 
 import PageTitle from 'src/shell/page/title/PageTitle';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import ValidatorEntity from 'src/features/chain-variants/zilliqa/components/ValidatorEntity';
 import { VALIDATOR_ZILLIQA } from 'src/features/chain-variants/zilliqa/stubs/validators';
 
@@ -51,7 +50,6 @@ const ValidatorZilliqa = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle title="Validator details" secondRow={ titleSecondRow }/>
       { query.data && <ValidatorDetails data={ query.data } isLoading={ isLoading }/> }
     </>

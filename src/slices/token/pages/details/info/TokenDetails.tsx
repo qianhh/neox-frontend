@@ -23,7 +23,6 @@ import { useMultichainContext } from 'src/features/multichain/context';
 
 import config from 'src/config';
 import * as DetailedInfo from 'src/shared/detailed-info/DetailedInfo';
-import DetailedInfoSponsoredItem from 'src/shared/detailed-info/DetailedInfoSponsoredItem';
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import useIsMounted from 'src/shared/hooks/useIsMounted';
 import AssetValue from 'src/shared/values/entity/AssetValue';
@@ -267,7 +266,6 @@ const TokenDetails = ({ tokenQuery }: Props) => {
         </>
       ) }
 
-      <DetailedInfoSponsoredItem isLoading={ tokenQuery.isPlaceholderData }/>
     </DetailedInfo.Container>
   );
 };

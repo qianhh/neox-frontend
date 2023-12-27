@@ -42,7 +42,6 @@ authTest('customization +@dark-mode', async({ render, page, mockEnvs, mockApiRes
   const component = await render(<HeroBanner/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

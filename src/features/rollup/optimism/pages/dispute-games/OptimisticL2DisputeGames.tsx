@@ -79,7 +79,7 @@ const OptimisticL2DisputeGames = () => {
 
   return (
     <>
-      <PageTitle title="Dispute games" withTextAd/>
+      <PageTitle title="Dispute games" />
       <DataList
         isError={ isError }
         itemsNum={ data?.items.length }

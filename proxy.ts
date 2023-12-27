@@ -7,13 +7,7 @@ import { CSP_NONCE_HEADER } from 'src/server/constants';
 import * as csp from 'src/server/csp/index';
 import * as middlewares from 'src/server/middlewares/index';
 
-import appConfig from 'src/config';
-
-const adsBannerFeature = appConfig.features.adsBanner;
-const adsTextFeature = appConfig.features.adsText;
-const shouldUseCspNonce =
-  (adsBannerFeature.isEnabled && adsBannerFeature.provider === 'sevio') ||
-  (adsTextFeature.isEnabled && adsTextFeature.provider === 'sevio');
+const shouldUseCspNonce = false;
 
 export async function proxy(req: NextRequest) {
   const isPageRequest = req.headers.get('accept')?.includes('text/html');

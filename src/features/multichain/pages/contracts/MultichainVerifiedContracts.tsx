@@ -95,7 +95,6 @@ const MultichainVerifiedContracts = () => {
     <Box>
       <PageTitle
         title="Verified contracts"
-        withTextAd
       />
       <ChainSelect
         value={ chainValue }

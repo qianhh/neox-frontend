@@ -9,8 +9,6 @@ import useApiQuery from 'src/api/hooks/useApiQuery';
 
 import PageTitle from 'src/shell/page/title/PageTitle';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import getQueryParamString from 'src/shared/router/get-query-param-string';
 
@@ -62,7 +60,6 @@ const TxCrossChain = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title="Cross-chain tx details"
         secondRow={ titleSecondRow }

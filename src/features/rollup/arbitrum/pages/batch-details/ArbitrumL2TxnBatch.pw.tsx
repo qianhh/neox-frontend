@@ -13,9 +13,8 @@ const hooksConfig = {
   },
 };
 
-test.beforeEach(async({ mockTextAd, mockEnvs }) => {
+test.beforeEach(async({ mockEnvs }) => {
   await mockEnvs(ENVS_MAP.arbitrumRollup);
-  await mockTextAd();
 });
 
 test('base view', async({ render, mockApiResponse }) => {

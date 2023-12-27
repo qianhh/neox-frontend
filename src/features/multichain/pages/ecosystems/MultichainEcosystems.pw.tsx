@@ -8,11 +8,10 @@ import { test, expect } from 'playwright/lib';
 
 import MultichainEcosystems from './MultichainEcosystems';
 
-test('base view +@mobile', async({ render, mockTextAd, mockApiResponse, mockEnvs, mockMultichainConfig, mockAssetResponse }) => {
+test('base view +@mobile', async({ render, mockApiResponse, mockEnvs, mockMultichainConfig, mockAssetResponse }) => {
   test.slow();
   await mockMultichainConfig();
   await mockEnvs(ENVS_MAP.multichain);
-  await mockTextAd();
   await mockAssetResponse(chainDataMock.chainA.logo as string, './playwright/mocks/duck.png');
   await mockAssetResponse(chainDataMock.chainB.logo as string, './playwright/mocks/goose.png');
   await mockApiResponse('multichainAggregator:chain_metrics', statsMock.chainMetrics);

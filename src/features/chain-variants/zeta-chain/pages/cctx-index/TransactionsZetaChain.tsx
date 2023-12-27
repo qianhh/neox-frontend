@@ -145,7 +145,7 @@ const TransactionsZetaChain = () => {
 
   return (
     <>
-      <PageTitle title="Transactions" withTextAd/>
+      <PageTitle title="Transactions" />
       <RoutedTabs tabs={ tabs } defaultTabId="zetachain"/>
     </>
   );

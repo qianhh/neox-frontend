@@ -7,8 +7,6 @@ import useApiQuery from 'src/api/hooks/useApiQuery';
 
 import PageTitle from 'src/shell/page/title/PageTitle';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import getQueryParamString from 'src/shared/router/get-query-param-string';
 
@@ -40,7 +38,6 @@ const TacOperation = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title="Operation details"
         contentAfter={ titleContentAfter }

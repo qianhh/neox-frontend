@@ -6,9 +6,8 @@ import { test, expect } from 'playwright/lib';
 import { data as withdrawalsData } from '../../mocks/withdrawals';
 import BeaconChainWithdrawals from './BeaconChainWithdrawals';
 
-test('base view +@mobile', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+test('base view +@mobile', async({ render, mockEnvs, mockApiResponse }) => {
   await mockEnvs(ENVS_MAP.beaconChain);
-  await mockTextAd();
   await mockApiResponse('core:withdrawals', withdrawalsData);
   await mockApiResponse('core:withdrawals_counters', { withdrawals_count: '111111', withdrawals_sum: '1010101010110101001101010' });
   const component = await render(<BeaconChainWithdrawals/>);

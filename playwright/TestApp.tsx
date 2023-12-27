@@ -41,7 +41,6 @@ export const defaultAppContext = {
     cookies: '',
     referrer: '',
     query: {},
-    adBannerProvider: 'slise' as const,
     apiData: null,
     uuid: '123',
     onionDomain: null,

@@ -6,7 +6,6 @@ import React from 'react';
 import { HomeDataContextProvider } from 'src/slices/home/contexts/home-data-context';
 import { HomeRpcDataContextProvider } from 'src/slices/home/contexts/rpc-data-context';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import LatestArbitrumL2Batches from 'src/features/rollup/arbitrum/pages/home/LatestArbitrumL2Batches';
 
 import config from 'src/config';
@@ -45,7 +44,7 @@ const Home = () => {
             <ChainIndicators/>
           </Flex>
           { !isMobile && config.slices.home.highlights && <Highlights mt={ 3 }/> }
-          { isMobile && <AdBanner mt={ 6 } mx="auto" justifyContent="center" format="mobile"/> }
+          { isMobile }
           <Flex mt={ 8 } direction={{ base: 'column', lg: 'row' }} columnGap={ 12 } rowGap={ 6 }>
             { leftWidget }
             <Box flexGrow={ 1 }>

@@ -78,7 +78,7 @@ const OptimisticL2Deposits = () => {
 
   return (
     <>
-      <PageTitle title={ `Deposits (${ layerLabels.parent }${ nbsp }${ rightLineArrow }${ nbsp }${ layerLabels.current })` } withTextAd/>
+      <PageTitle title={ `Deposits (${ layerLabels.parent }${ nbsp }${ rightLineArrow }${ nbsp }${ layerLabels.current })` } />
       <DataList
         isError={ isError }
         itemsNum={ data?.items?.length }

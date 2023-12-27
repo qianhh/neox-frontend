@@ -8,9 +8,8 @@ import { test, expect } from 'playwright/lib';
 import TokenTransfers from './TokenTransfers';
 
 // FIXME: test is flaky, screenshot in docker container is different from local
-test.skip('base view +@mobile', async({ render, mockTextAd, mockApiResponse, mockAssetResponse }) => {
+test.skip('base view +@mobile', async({ render, mockApiResponse, mockAssetResponse }) => {
   await mockAssetResponse(tokenInstanceMock.base.image_url as string, './playwright/mocks/image_s.jpg');
-  await mockTextAd();
   await mockApiResponse('core:token_transfers_all', mixTokens, { queryParams: { type: [ 'all' ] } });
   const component = await render(<TokenTransfers/>);
   await expect(component).toHaveScreenshot();

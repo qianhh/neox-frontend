@@ -78,7 +78,6 @@ const MultichainUserOps = () => {
     <>
       <PageTitle
         title="User operations"
-        withTextAd
       />
       <DataList
         isError={ query.isError }

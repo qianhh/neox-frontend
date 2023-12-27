@@ -7,7 +7,6 @@ function generateCspPolicy(isPrivateMode = false, nonce?: string) {
   const policyDescriptor = mergeDescriptors(
     descriptors.addressProfileApi(),
     descriptors.app(isPrivateMode),
-    descriptors.ads(isPrivateMode, nonce),
     descriptors.connectWallet(isPrivateMode),
     descriptors.cloudFlare(isPrivateMode),
     descriptors.flashblocks(),

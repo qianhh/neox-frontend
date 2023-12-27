@@ -6,7 +6,6 @@ import React from 'react';
 
 import type { MarketplaceDapp } from '@blockscout/admin-rs-types';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import { apps as appsMock } from 'src/features/marketplace/mocks/dapps';
 
 import config from 'src/config';
@@ -60,15 +59,7 @@ const Banner = ({ apps = [], favoriteApps, isLoading, onFavoriteClick, onAppClic
   return (
     <Flex gap={ 6 }>
       { content }
-      { !isMobile && (
-        <AdBanner
-          format="mobile"
-          w="fit-content"
-          flexShrink={ 0 }
-          borderRadius="md"
-          overflow="hidden"
-        />
-      ) }
+      { !isMobile }
     </Flex>
   );
 };

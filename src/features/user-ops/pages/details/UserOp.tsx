@@ -15,7 +15,6 @@ import TxTokenTransfer from 'src/slices/token-transfer/pages/tx/TxTokenTransfer'
 import useTxQuery from 'src/slices/tx/hooks/useTxQuery';
 import TxLogs from 'src/slices/tx/pages/details/logs/TxLogs';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import { USER_OP } from 'src/features/user-ops/stubs';
 
 import throwOnAbsentParamError from 'src/shared/errors/throw-on-absent-param-error';
@@ -92,7 +91,6 @@ const UserOp = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title="User operation details"
         secondRow={ titleSecondRow }

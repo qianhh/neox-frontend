@@ -78,7 +78,6 @@ const Accounts = () => {
 
   return (
     <>
-      <PageTitle title="Top accounts" withTextAd/>
       <DataList
         isError={ isError }
         itemsNum={ data?.items.length }

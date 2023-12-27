@@ -102,7 +102,7 @@ const TagSearch = () => {
 
   return (
     <>
-      <PageTitle title="Search result" withTextAd/>
+      <PageTitle title="Search result" />
       <DataList
         isError={ isError }
         itemsNum={ data?.items.length }

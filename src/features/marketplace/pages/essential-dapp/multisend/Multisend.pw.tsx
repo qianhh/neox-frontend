@@ -19,7 +19,6 @@ test('base view +@dark-mode +@mobile', async({ render, mockEnvs, page }: TestFnA
   const component = await render(<Multisend/>);
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

@@ -289,7 +289,7 @@ const Tokens = () => {
     <>
       <PageTitle
         title="Tokens"
-        withTextAd
+        
       />
       <RoutedTabs
         tabs={ tabs }

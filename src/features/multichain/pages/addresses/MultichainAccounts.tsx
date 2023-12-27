@@ -81,7 +81,6 @@ const MultichainAccounts = () => {
     <>
       <PageTitle
         title="Top accounts"
-        withTextAd
       />
       <DataList
         isError={ isError }

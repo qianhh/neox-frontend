@@ -6,7 +6,6 @@ import React from 'react';
 import type { Props as PageProps } from 'src/server/getServerSideProps/handlers';
 
 import useGetCsrfToken from 'src/features/account/hooks/useGetCsrfToken';
-import useAdblockDetect from 'src/features/ads/common/hooks/useAdblockDetect';
 import useNotifyOnNavigation from 'src/features/metasuites/hooks/useNotifyOnNavigation';
 
 import * as mixpanel from 'src/services/mixpanel';
@@ -24,7 +23,6 @@ const PageNextJs = <Pathname extends Route['pathname']>(props: Props<Pathname>) 
   const isMounted = useIsMounted();
 
   useGetCsrfToken();
-  useAdblockDetect();
   useNotifyOnNavigation();
   useUpdateUsercentricsConsent();
 

@@ -55,7 +55,6 @@ const testWidgetsFn = (isMobile: boolean) => async({ render, mockConfigResponse,
   }
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 };
@@ -63,7 +62,7 @@ const testWidgetsFn = (isMobile: boolean) => async({ render, mockConfigResponse,
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
 
-  test('contract', async({ render, mockApiResponse, page }) => {
+  test('contract', async({ render, mockApiResponse }) => {
     await mockApiResponse('core:address', addressMock.contract, { pathParams: { hash: ADDRESS_HASH } });
 
     const component = await render(
@@ -75,12 +74,11 @@ test.describe('mobile', () => {
     );
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
 
-  test('validator', async({ render, page, mockApiResponse }) => {
+  test('validator', async({ render, mockApiResponse }) => {
     await mockApiResponse('core:address', addressMock.validator, { pathParams: { hash: ADDRESS_HASH } });
 
     const component = await render(
@@ -92,12 +90,11 @@ test.describe('mobile', () => {
     );
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
 
-  test('filecoin', async({ render, mockApiResponse, page }) => {
+  test('filecoin', async({ render, mockApiResponse }) => {
     await mockApiResponse('core:address', addressMock.filecoin, { pathParams: { hash: ADDRESS_HASH } });
 
     const component = await render(
@@ -109,7 +106,6 @@ test.describe('mobile', () => {
     );
 
     await expect(component).toHaveScreenshot({
-      mask: [ page.locator(pwConfig.adsBannerSelector) ],
       maskColor: pwConfig.maskColor,
     });
   });
@@ -117,7 +113,7 @@ test.describe('mobile', () => {
   test('with widgets', testWidgetsFn(true));
 });
 
-test('contract', async({ render, page, mockApiResponse }) => {
+test('contract', async({ render, mockApiResponse }) => {
   await mockApiResponse('core:address', addressMock.contract, { pathParams: { hash: ADDRESS_HASH } });
 
   const component = await render(
@@ -129,13 +125,12 @@ test('contract', async({ render, page, mockApiResponse }) => {
   );
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
 // there's an unexpected timeout occurred in this test
-test.fixme('token', async({ render, mockApiResponse, injectMetaMaskProvider, page }) => {
+test.fixme('token', async({ render, mockApiResponse, injectMetaMaskProvider }) => {
   await mockApiResponse('core:address', addressMock.token, { pathParams: { hash: ADDRESS_HASH } });
   await mockApiResponse('core:address_tokens', tokensMock.erc20List, { pathParams: { hash: ADDRESS_HASH }, queryParams: { type: 'ERC-20' }, times: 1 });
   await mockApiResponse('core:address_tokens', tokensMock.erc721List, { pathParams: { hash: ADDRESS_HASH }, queryParams: { type: 'ERC-721' }, times: 1 });
@@ -151,12 +146,11 @@ test.fixme('token', async({ render, mockApiResponse, injectMetaMaskProvider, pag
   );
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('validator', async({ render, mockApiResponse, page }) => {
+test('validator', async({ render, mockApiResponse }) => {
   await mockApiResponse('core:address', addressMock.validator, { pathParams: { hash: ADDRESS_HASH } });
 
   const component = await render(
@@ -168,12 +162,11 @@ test('validator', async({ render, mockApiResponse, page }) => {
   );
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
 
-test('filecoin', async({ render, mockApiResponse, page }) => {
+test('filecoin', async({ render, mockApiResponse }) => {
   await mockApiResponse('core:address', addressMock.filecoin, { pathParams: { hash: ADDRESS_HASH } });
 
   const component = await render(
@@ -185,7 +178,6 @@ test('filecoin', async({ render, mockApiResponse, page }) => {
   );
 
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

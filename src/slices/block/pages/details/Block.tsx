@@ -21,7 +21,6 @@ import BlockInternalTxs from 'src/slices/block/pages/details/BlockInternalTxs';
 import getChainValidatorTitle from 'src/slices/chain/verification-type/utils/get-chain-validator-title';
 import TxsWithFrontendSorting from 'src/slices/tx/pages/index/list/TxsWithFrontendSorting';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
 import AlternativeExplorers from 'src/features/alternative-explorers/components/AlternativeExplorers';
 import BlockDeposits from 'src/features/chain-variants/beacon-chain/pages/block/BlockDeposits';
 import BlockWithdrawals from 'src/features/chain-variants/beacon-chain/pages/block/BlockWithdrawals';
@@ -220,7 +219,6 @@ const BlockPageContent = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
       <PageTitle
         title={ title }
         beforeTitle={ beforeTitleElement }

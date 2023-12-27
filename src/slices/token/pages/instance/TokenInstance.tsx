@@ -25,8 +25,6 @@ import {
   getTokenInstanceHoldersStub,
 } from 'src/slices/token/stubs';
 
-import TextAd from 'src/features/ads/text/components/TextAd';
-
 import throwOnResourceLoadError from 'src/shared/errors/throw-on-resource-load-error';
 import useIsMobile from 'src/shared/hooks/useIsMobile';
 import Pagination from 'src/shared/pagination/Pagination';
@@ -142,7 +140,6 @@ const TokenInstanceContent = () => {
 
   return (
     <MetadataUpdateProvider>
-      <TextAd mb={ 6 }/>
 
       <TokenInstancePageTitle
         isLoading={ isLoading }

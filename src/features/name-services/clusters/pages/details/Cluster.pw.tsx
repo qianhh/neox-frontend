@@ -10,12 +10,11 @@ import Cluster from './Cluster';
 
 const CDN_URL = 'https://localhost:3000/cdn';
 
-test.beforeEach(async({ mockEnvs, mockTextAd }) => {
+test.beforeEach(async({ mockEnvs }) => {
   await mockEnvs([
     ...ENVS_MAP.clusters,
     [ 'NEXT_PUBLIC_CLUSTERS_CDN_URL', CDN_URL ],
   ]);
-  await mockTextAd();
 });
 
 test.describe('Cluster Details Page', () => {

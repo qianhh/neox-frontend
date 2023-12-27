@@ -8,9 +8,8 @@ import { test, expect } from 'playwright/lib';
 import * as tacOperationMock from '../../mocks/operations';
 import TacOperation from './TacOperation';
 
-test('base view +@dark-mode +@mobile', async({ render, mockTextAd, mockApiResponse, mockEnvs }) => {
+test('base view +@dark-mode +@mobile', async({ render, mockApiResponse, mockEnvs }) => {
   await mockEnvs(ENVS_MAP.tac);
-  await mockTextAd();
   await mockApiResponse('tac:operation', tacOperationMock.tacOperation, {
     pathParams: { id: tacOperationMock.tacOperation.operation_id },
   });
@@ -30,9 +29,8 @@ test('base view +@dark-mode +@mobile', async({ render, mockTextAd, mockApiRespon
   await expect(component).toHaveScreenshot();
 });
 
-test('pending operation', async({ render, mockTextAd, mockApiResponse, mockEnvs }) => {
+test('pending operation', async({ render, mockApiResponse, mockEnvs }) => {
   await mockEnvs(ENVS_MAP.tac);
-  await mockTextAd();
   await mockApiResponse('tac:operation', {
     ... tacOperationMock.tacOperation,
     type: tac.OperationType.PENDING,

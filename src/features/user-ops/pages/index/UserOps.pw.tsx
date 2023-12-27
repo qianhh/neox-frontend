@@ -7,10 +7,9 @@ import { test, expect } from 'playwright/lib';
 
 import UserOps from './UserOps';
 
-test('base view +@mobile', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+test('base view +@mobile', async({ render, mockEnvs, mockApiResponse }) => {
   test.slow();
   await mockEnvs(ENVS_MAP.userOps);
-  await mockTextAd();
   await mockApiResponse('core:user_ops', userOpsData);
   const component = await render(<UserOps/>);
   await expect(component).toHaveScreenshot({ timeout: 10_000 });

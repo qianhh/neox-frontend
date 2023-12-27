@@ -6,9 +6,8 @@ import { test, expect, devices } from 'playwright/lib';
 import { data as depositsData } from '../../mocks/deposits';
 import BeaconChainDeposits from './BeaconChainDeposits';
 
-test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+test('base view', async({ render, mockEnvs, mockApiResponse }) => {
   await mockEnvs(ENVS_MAP.beaconChain);
-  await mockTextAd();
   await mockApiResponse('core:deposits', depositsData);
   await mockApiResponse('core:deposits_counters', { deposits_count: 111111 });
   const component = await render(<BeaconChainDeposits/>);
@@ -17,9 +16,8 @@ test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
 
 test.describe('mobile', () => {
   test.use({ viewport: devices['iPhone 13 Pro'].viewport });
-  test('base view', async({ render, mockEnvs, mockTextAd, mockApiResponse }) => {
+  test('base view', async({ render, mockEnvs, mockApiResponse }) => {
     await mockEnvs(ENVS_MAP.beaconChain);
-    await mockTextAd();
     await mockApiResponse('core:deposits', depositsData);
     await mockApiResponse('core:deposits_counters', { deposits_count: 111111 });
     const component = await render(<BeaconChainDeposits/>);

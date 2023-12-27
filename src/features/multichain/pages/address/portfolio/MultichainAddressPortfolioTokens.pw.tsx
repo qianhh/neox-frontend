@@ -47,14 +47,12 @@ test('many chains +@mobile +@dark-mode', async({ render, mockApiResponse, page }
     { hooksConfig },
   );
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 
   await component.getByText('show more').click();
   await component.getByLabel('White goose portfolio selector').click();
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });
@@ -82,7 +80,6 @@ test('zero net worth', async({ render, mockApiResponse, page }) => {
     { hooksConfig },
   );
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

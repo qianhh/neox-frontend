@@ -32,7 +32,6 @@ import { getTokenHoldersStub } from 'src/slices/token/stubs';
 
 import Address3rdPartyWidgets from 'src/features/address-3rd-party-widgets/pages/address/Address3rdPartyWidgets';
 import useAddress3rdPartyWidgets from 'src/features/address-3rd-party-widgets/pages/address/useAddress3rdPartyWidgets';
-import TextAd from 'src/features/ads/text/components/TextAd';
 import TokenAdvancedFilterLink from 'src/features/advanced-filter/pages/token/TokenAdvancedFilterLink';
 import CsvExport from 'src/features/csv-export/components/CsvExport';
 
@@ -287,7 +286,6 @@ const TokenPageContent = () => {
 
   return (
     <>
-      <TextAd mb={ 6 }/>
 
       <TokenPageTitle
         tokenQuery={ tokenQuery }

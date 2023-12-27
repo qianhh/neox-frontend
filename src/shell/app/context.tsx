@@ -14,7 +14,6 @@ const AppContext = createContext<PageProps>({
   cookies: '',
   referrer: '',
   query: {},
-  adBannerProvider: null,
   apiData: null,
   uuid: '',
   cspNonce: null,

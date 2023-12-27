@@ -36,7 +36,6 @@ test('base view +@mobile +@dark-mode', async({ mockApiResponse, render, page, mo
   const component = await render(<MultichainHome/>);
   await component.getByRole('link', { name: 'OP Devnet' }).hover();
   await expect(component).toHaveScreenshot({
-    mask: [ page.locator(pwConfig.adsBannerSelector) ],
     maskColor: pwConfig.maskColor,
   });
 });

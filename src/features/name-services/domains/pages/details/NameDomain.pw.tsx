@@ -7,8 +7,7 @@ import { test, expect } from 'playwright/lib';
 
 import NameDomain from './NameDomain';
 
-test('details tab', async({ render, mockTextAd, mockApiResponse, mockAssetResponse }) => {
-  await mockTextAd();
+test('details tab', async({ render, mockApiResponse, mockAssetResponse }) => {
   await mockApiResponse('bens:domain_info', ensDomainMock.ensDomainA, {
     pathParams: { name: ensDomainMock.ensDomainA.name },
     queryParams: { protocol_id: 'ens' },
@@ -27,8 +26,7 @@ test('details tab', async({ render, mockTextAd, mockApiResponse, mockAssetRespon
   await expect(component).toHaveScreenshot();
 });
 
-test('history tab +@mobile', async({ render, mockTextAd, mockApiResponse, mockAssetResponse }) => {
-  await mockTextAd();
+test('history tab +@mobile', async({ render, mockApiResponse, mockAssetResponse }) => {
   await mockApiResponse('bens:domain_info', ensDomainMock.ensDomainA, {
     pathParams: { name: ensDomainMock.ensDomainA.name },
     queryParams: { protocol_id: 'ens' },

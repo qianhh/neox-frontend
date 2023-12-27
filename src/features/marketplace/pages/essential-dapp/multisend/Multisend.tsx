@@ -4,7 +4,6 @@ import { Box } from '@chakra-ui/react';
 import { MultisenderWidget } from '@multisender.app/multisender-react-widget';
 import React from 'react';
 
-import AdBanner from 'src/features/ads/banner/components/AdBanner';
 import essentialDappsChainsConfig from 'src/features/marketplace/chains-config/essential-dapps';
 
 import config from 'src/config';
@@ -533,16 +532,7 @@ const Multisend = () => {
           }}
         />
       </Container>
-      { (feature?.essentialDappsAdEnabled && !isMobile) && (
-        <AdBanner
-          format="desktop"
-          w="fit-content"
-          borderRadius="md"
-          overflow="hidden"
-          mx="auto"
-          mt={ 10 }
-        />
-      ) }
+      { (feature?.essentialDappsAdEnabled && !isMobile) }
     </>
   );
 };

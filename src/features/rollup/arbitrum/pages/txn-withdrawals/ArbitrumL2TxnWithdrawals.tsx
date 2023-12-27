@@ -82,7 +82,7 @@ const ArbitrumL2TxnWithdrawals = () => {
 
   return (
     <>
-      <PageTitle title="Transaction withdrawals" withTextAd/>
+      <PageTitle title="Transaction withdrawals" />
       <Text>
         { layerLabels.current } to { layerLabels.parent } message relayer: search for your { layerLabels.current } transaction to execute a manual withdrawal.
       </Text>

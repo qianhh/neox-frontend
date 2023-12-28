@@ -1,6 +1,7 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
     "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
     "javascript.preferences.autoImportFileExcludePatterns": [
         "./src/toolkit/package/**",
         "./src/toolkit/components/**/index.ts",

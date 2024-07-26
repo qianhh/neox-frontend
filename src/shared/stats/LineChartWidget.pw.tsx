@@ -27,7 +27,7 @@ const props: LineChartWidgetProps = {
         { date: new Date('2023-02-23'), value: 25136740.887217894 },
       ],
       charts: [],
-      units: 'ETH',
+      units: 'GAS',
     },
   ],
   title: 'Native coin circulating supply',
@@ -188,7 +188,7 @@ test('multiple charts', async({ render, page }) => {
           },
         ],
         items: props.charts[0].items.map(({ date }) => ({ date, value: 20000000 })),
-        units: 'ETH',
+        units: 'GAS',
       },
     ],
   };

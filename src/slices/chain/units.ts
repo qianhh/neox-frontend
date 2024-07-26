@@ -9,5 +9,5 @@ const gweiName = config.chain.currency.gweiName || `G${ weiName }`;
 export const currencyUnits: Record<Unit, string> = {
   wei: weiName,
   gwei: gweiName,
-  ether: config.chain.currency.symbol || 'ETH',
+  ether: config.chain.currency.symbol || 'GAS',
 };

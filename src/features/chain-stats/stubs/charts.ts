@@ -4,8 +4,8 @@ import type { LineChart } from '@blockscout/stats-types';
 export const CHAIN_STATS_CHART_INFO: ChainStatsChart = {
   id: 'chart_0',
   title: 'Average transaction fee',
-  description: 'The average amount in ETH spent per transaction',
-  units: 'ETH',
+  description: 'The average amount in GAS spent per transaction',
+  units: 'GAS',
   resolutions: [ 'DAY', 'MONTH' ],
 };
 
@@ -18,7 +18,7 @@ export const CHAIN_STATS_CHARTS_SECTION: ChainStatsSection = {
       id: 'chart_1',
       title: 'Transactions fees',
       description: 'Amount of tokens paid as fees',
-      units: 'ETH',
+      units: 'GAS',
       resolutions: [ 'DAY', 'MONTH' ],
     },
     {
@@ -45,7 +45,7 @@ export const CHAIN_STATS_CHARTS_SECTION_GAS: ChainStatsSection = {
     id: 'averageGasPrice',
     title: 'Average gas price',
     description: 'Average gas price',
-    units: 'ETH',
+    units: 'GAS',
     resolutions: [ 'DAY', 'MONTH' ],
   } ],
 };

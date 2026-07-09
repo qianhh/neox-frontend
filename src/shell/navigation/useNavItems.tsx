@@ -314,12 +314,12 @@ export default function useNavItems(): ReturnType {
       };
     })();
 
-    const apiNavItem: NavItem | null = config.features.apiDocs.isEnabled ? {
-      text: 'API',
-      nextRoute: { pathname: '/api-docs' as const },
-      icon: 'navigation/api_docs',
-      isActive: pathname.startsWith('/api-docs'),
-    } : null;
+    // const apiNavItem: NavItem | null = config.features.apiDocs.isEnabled ? {
+    //   text: 'API',
+    //   nextRoute: { pathname: '/api-docs' as const },
+    //   icon: 'navigation/api_docs',
+    //   isActive: pathname.startsWith('/api-docs'),
+    // } : null;
 
     const otherNavItems: Array<NavItem> | Array<Array<NavItem>> = [
       config.features.multichain.isEnabled ? {
@@ -363,7 +363,7 @@ export default function useNavItems(): ReturnType {
         isActive: pathname.startsWith('/app') || pathname.startsWith('/essential-dapps'),
       } : null,
       statsNavItem,
-      apiNavItem,
+      // apiNavItem,
       {
         text: 'Other',
         icon: 'navigation/other',
